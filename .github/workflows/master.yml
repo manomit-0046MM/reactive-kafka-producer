@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build -t reactive-kafka-producer --build-arg bootstrap_server=${{secrets.BOOTSTRAP_SERVER}} --build-arg account_name=${{secrets.ACCOUNT_NAME}} --build-arg cluster_api_key=${{secrets.CLUSTER_API_KEY}} --build-arg cluster_api_secret=${{secrets.CLUSTER_API_SECRET}} --build-arg connection_string=${{secrets.CONNECTION_STRING}} --build-arg container_name=${{secrets.CONTAINER_NAME}} --build-arg sr_api_key=${{secrets.SR_API_KEY}} --build-arg sr_api_secret=${{secrets.SR_API_SECRET}} --build-arg sr_url=${{secrets.SR_URL}} .
+      run: docker build --build-arg bootstrap_server=${{secrets.BOOTSTRAP_SERVER}} --build-arg account_name=${{secrets.ACCOUNT_NAME}} --build-arg cluster_api_key=${{secrets.CLUSTER_API_KEY}} --build-arg cluster_api_secret=${{secrets.CLUSTER_API_SECRET}} --build-arg connection_string=${{secrets.CONNECTION_STRING}} --build-arg container_name=${{secrets.CONTAINER_NAME}} --build-arg sr_api_key=${{secrets.SR_API_KEY}} --build-arg sr_api_secret=${{secrets.SR_API_SECRET}} --build-arg sr_url=${{secrets.SR_URL}} -t reactive-kafka-producer .
