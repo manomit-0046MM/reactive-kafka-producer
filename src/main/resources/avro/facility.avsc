@@ -1,0 +1,117 @@
+{
+  "namespace": "com.bsolz.reactivekafka.models",
+  "type": "record",
+  "name": "Facility",
+  "fields": [
+    {
+      "name": "facilityId",
+      "type": "string",
+      "avro.java.string": "String"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "avro.java.string": "String"
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "avro.java.string": "String"
+    },
+    {
+      "name": "extOwned",
+      "type": "boolean",
+      "avro.java.boolean": "boolean",
+      "default": true
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "avro.java.boolean": "String"
+    },
+    {
+      "name": "extExposed",
+      "type": "boolean",
+      "avro.java.boolean": "boolean",
+      "default": false
+    },
+    {
+      "name": "url",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "doDAAC",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "address",
+      "type": "com.bsolz.reactivekafka.models.Address",
+      "default": null
+    },
+    {
+      "name": "parent",
+      "type": "com.bsolz.reactivekafka.models.Parent",
+      "default": null
+    },
+    {
+      "name": "facilityDetails",
+      "type": "com.bsolz.reactivekafka.models.FacilityDetails",
+      "default": null
+    },
+    {
+      "name": "alternateCodes",
+      "type": [
+        {
+          "type": "array",
+          "items": "com.bsolz.reactivekafka.models.AlternateDetails"
+        },
+        "null"
+      ]
+    },
+    {
+      "name": "openingHours",
+      "type": [
+        {
+          "type": "array",
+          "items": "com.bsolz.reactivekafka.models.OpeningHours"
+        },
+        "null"
+      ]
+    },
+    {
+      "name": "transportModes",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "facilityServices",
+      "type": [
+        {
+          "type": "array",
+          "items": "com.bsolz.reactivekafka.models.FacilityServices"
+        },
+        "null"
+      ]
+    },
+    {
+      "name": "fences",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "bdas",
+      "type": [
+        {
+          "type": "array",
+          "items": "com.bsolz.reactivekafka.models.Bdas"
+        },
+        "null"
+      ]
+    },
+    {
+      "name": "contactDetails",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    }
+  ]
+}

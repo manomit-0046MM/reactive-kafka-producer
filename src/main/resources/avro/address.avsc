@@ -1,0 +1,77 @@
+{
+  "namespace": "com.bsolz.reactivekafka.models",
+  "type": "record",
+  "name": "Address",
+  "fields": [
+    {
+      "name": "houseNumber",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "street",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "city",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "postalCode",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "poBox",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "district",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "territory",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "countryName",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "countryCode",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "addressLine2",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "addressLine3",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "latitude",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "longitude",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "addressQualityCheckIndicator",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    }
+  ]
+}

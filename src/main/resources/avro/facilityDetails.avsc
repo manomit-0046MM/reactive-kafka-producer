@@ -1,0 +1,109 @@
+{
+  "namespace": "com.bsolz.reactivekafka.models",
+  "type": "record",
+  "name": "FacilityDetails",
+  "fields": [
+    {
+      "name": "weightLimitCraneKg",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "weightLimitYardKg",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "vesselAgent",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "gpsFlag",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "gsmFlag",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "oceanFreightPricing",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "brand",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "commFacilityType",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "exportEnquiriesEmail",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "importEnquiriesEmail",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "facilityFunction",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "facilityFunctionDesc",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "internationalDialCode",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "telephoneNumber",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "facilityTypes",
+      "type": [{
+        "type": "array",
+        "items": {
+          "name": "FacilityTypes",
+          "type": "record",
+          "fields": [
+            {
+              "name": "code",
+              "type": ["null", "string"],
+              "avro.java.string": "String"
+            },
+            {
+              "name": "name",
+              "type": ["null", "string"],
+              "avro.java.string": "String"
+            },
+            {
+              "name": "masterType",
+              "type": ["null", "string"],
+              "avro.java.string": "String"
+            },
+            {
+              "name": "validThroughDate",
+              "type": ["null", "string"],
+              "avro.java.string": "String"
+            }
+          ]
+        }
+      },"null"]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "namespace": "com.bsolz.reactivekafka.models",
+  "type": "record",
+  "name": "Parent",
+  "fields": [
+    {
+      "name": "name",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "type",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "bdaType",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "alternateCodes",
+      "type": [{
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "AlternateCodes",
+          "fields": [
+            {
+              "name": "codeType",
+              "type": ["null", "string"],
+              "avro.java.string": "String"
+            },
+            {
+              "name": "code",
+              "type": ["null", "string"],
+              "avro.java.string": "String"
+            }
+          ]
+        }
+      }, "null"]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "namespace": "com.bsolz.reactivekafka.models",
+  "type": "record",
+  "name": "Bdas",
+  "fields": [
+    {
+      "name": "name",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "type",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "bdaType",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "alternateCodes",
+      "type": [
+        {
+          "type": "array",
+          "items": "com.bsolz.reactivekafka.models.AlternateDetails"
+        },
+        "null"
+      ]
+    }
+  ]
+}

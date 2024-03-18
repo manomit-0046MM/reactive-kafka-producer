@@ -1,0 +1,32 @@
+{
+  "namespace": "com.bsolz.reactivekafka.models",
+  "type": "record",
+  "name": "OpeningHours",
+  "fields": [
+    {
+      "name": "day",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "openTimeHours",
+      "type": ["null", "int"],
+      "avro.java.int": "int"
+    },
+    {
+      "name": "openTimeMinutes",
+      "type": ["null", "int"],
+      "avro.java.int": "int"
+    },
+    {
+      "name": "closeTimeHours",
+      "type": ["null", "int"],
+      "avro.java.int": "int"
+    },
+    {
+      "name": "closeTimeMinutes",
+      "type": ["null", "int"],
+      "avro.java.int": "int"
+    }
+  ]
+}

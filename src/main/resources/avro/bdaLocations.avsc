@@ -1,0 +1,30 @@
+{
+  "namespace": "com.bsolz.reactivekafka.models",
+  "type": "record",
+  "name": "BdaLocations",
+  "fields": [
+    {
+      "name": "name",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "type",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "status",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "alternateCodes",
+      "type": [
+        {
+          "type": "array",
+          "items": "com.bsolz.reactivekafka.models.AlternateDetails"
+        },
+        "null"
+      ]
+    }
+
+  ]
+}

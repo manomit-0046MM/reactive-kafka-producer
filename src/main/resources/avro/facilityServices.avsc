@@ -1,0 +1,27 @@
+{
+  "namespace": "com.bsolz.reactivekafka.models",
+  "type": "record",
+  "name": "FacilityServices",
+  "fields": [
+    {
+      "name": "serviceName",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "serviceCode",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "serviceDescription",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "validThroughDate",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    }
+  ]
+}

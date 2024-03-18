@@ -1,0 +1,40 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: reactive-kafka-producer
+  kafka:
+    bootstrap-servers: ${BOOTSTRAP_SERVER}
+    topic:
+      name: "copo.locationref.topic.internal.any.v1"
+    properties:
+      schema:
+        registry:
+          url: ${SR_URL}
+      basic:
+        auth:
+          credentials:
+            source: USER_INFO
+          user:
+            info: ${SR_API_KEY}:${SR_API_SECRET}
+      sasl:
+        jaas:
+          config: org.apache.kafka.common.security.plain.PlainLoginModule
+            required username="${CLUSTER_API_KEY}" password="${CLUSTER_API_SECRET}";
+        mechanism: PLAIN
+      security:
+        protocol: SASL_SSL
+      ssl:
+        endpoint:
+          identification:
+            algorithm: https
+    producer:
+      keySerializer: org.apache.kafka.common.serialization.StringSerializer
+      valueSerializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+  cloud:
+    azure:
+      storage:
+        blob:
+          account-name: ${ACCOUNT_NAME}
+          container-name: ${CONTAINER_NAME}
+          connection-string: ${CONNECTION_STRING}

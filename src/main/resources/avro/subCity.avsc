@@ -1,0 +1,32 @@
+{
+  "namespace": "com.bsolz.reactivekafka.models",
+  "type": "record",
+  "name": "SubCity",
+  "fields": [
+    {
+      "name": "name",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "type",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "bdaType",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "alternateCodes",
+      "type": [
+        {
+          "type": "array",
+          "items": "com.bsolz.reactivekafka.models.AlternateDetails"
+        },
+        "null"
+      ]
+    }
+  ]
+}

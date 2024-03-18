@@ -1,0 +1,17 @@
+{
+  "namespace": "com.bsolz.reactivekafka.models",
+  "type": "record",
+  "name": "AlternateDetails",
+  "fields": [
+    {
+      "name": "codeType",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "code",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    }
+  ]
+}

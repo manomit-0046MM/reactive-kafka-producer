@@ -1,0 +1,220 @@
+{
+  "namespace": "com.bsolz.reactivekafka.models",
+  "type": "record",
+  "name": "Location",
+  "fields": [
+    {
+      "name": "geoId",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "geoType",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "name",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "status",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "validFrom",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "validTo",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "longitude",
+      "type": ["null", "double"],
+      "avro.java.double": "Double"
+    },
+    {
+      "name": "latitude",
+      "type": ["null", "double"],
+      "avro.java.double": "Double"
+    },
+    {
+      "name": "timeZone",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "daylightSavingTime",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "utcOffsetMinutes",
+      "type": ["null", "int"],
+      "avro.java.int": "Integer"
+    },
+    {
+      "name": "daylightSavingStart",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "daylightSavingEnd",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "daylightSavingShiftMinutes",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "description",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "workaroundReason",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "restricted",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "postalCodeMandatory",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "stateProvinceMandatory",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "dialingCode",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "dialingCodeDescription",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "portFlag",
+      "type": "boolean",
+      "avro.java.boolean": "boolean",
+      "default": true
+    },
+    {
+      "name": "olsonTimezone",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "bdaType",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "hsudName",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "isMaerskCity",
+      "type": "boolean",
+      "avro.java.boolean": "boolean",
+      "default": true
+    },
+    {
+      "name": "alternateNames",
+      "type": [{
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "AlternateNames",
+          "fields": [
+            {
+              "name": "name",
+              "type": ["null", "string"],
+              "avro.java.string": "String"
+            },
+            {
+              "name": "description",
+              "type": ["null", "string"],
+              "avro.java.string": "String"
+            },
+            {
+              "name": "status",
+              "type": ["null", "string"],
+              "avro.java.string": "String"
+            }
+          ]
+        }
+      }, "null"]
+    },
+    {
+      "name": "alternateCodes",
+      "type": [
+        {
+          "type": "array",
+          "items": "com.bsolz.reactivekafka.models.AlternateDetails"
+        },
+        "null"
+      ]
+    },
+    {
+      "name": "country",
+      "type": ["null","com.bsolz.reactivekafka.models.Country"]
+    },
+    {
+      "name": "parents",
+      "type": [
+        {
+          "type": "array",
+          "items": "com.bsolz.reactivekafka.models.Parent"
+        },
+        "null"
+      ]
+    },
+    {
+      "name": "subCityParents",
+      "type": [
+        {
+          "type": "array",
+          "items": "com.bsolz.reactivekafka.models.SubCity"
+        },
+        "null"
+      ]
+    },
+    {
+      "name": "bdas",
+      "type": [
+        {
+          "type": "array",
+          "items": "com.bsolz.reactivekafka.models.Bdas"
+        },
+        "null"
+      ]
+    },
+    {
+      "name": "bdaLocations",
+      "type": [
+        {
+          "type": "array",
+          "items": "com.bsolz.reactivekafka.models.BdaLocations"
+        },
+        "null"
+      ]
+    }
+  ]
+}

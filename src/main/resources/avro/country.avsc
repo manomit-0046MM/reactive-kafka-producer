@@ -1,0 +1,22 @@
+{
+  "namespace": "com.bsolz.reactivekafka.models",
+  "type": "record",
+  "name": "Country",
+  "fields": [
+    {
+      "name": "name",
+      "type": ["null", "string"],
+      "avro.java.string": "String"
+    },
+    {
+      "name": "alternateCodes",
+      "type": [
+        {
+          "type": "array",
+          "items": "com.bsolz.reactivekafka.models.AlternateDetails"
+        },
+        "null"
+      ]
+    }
+  ]
+}
