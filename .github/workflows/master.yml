@@ -15,7 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build \
+      run: docker build . \
+        --file Dockerfile \
         --tag reactive-kafka-producer:latest \
         --build-arg bootstrap_server=${{secrets.BOOTSTRAP_SERVER}} \
         --build-arg account_name=${{secrets.ACCOUNT_NAME}} \
@@ -26,4 +27,3 @@ jobs:
         --build-arg sr_api_key=${{secrets.SR_API_KEY}} \
         --build-arg sr_api_secret=${{secrets.SR_API_SECRET}} \
         --build-arg sr_url=${{secrets.SR_URL}}
-        --file Dockerfile .
