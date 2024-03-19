@@ -55,6 +55,6 @@ jobs:
         manifests: |
           reactive-producer-kafka.yml
         images: |
-          ${{ secrets.REGISTRY_LOGIN_SERVER }}/reactive-kafka-producer:${{ github.sha }}
+          ${{ secrets.REGISTRY_LOGIN_SERVER }}/reactive-kafka-producer:latest
         imagepullsecrets: |
           k8s-secret
