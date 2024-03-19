@@ -32,11 +32,11 @@ jobs:
         docker build -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/reactive-kafka-producer:latest --build-arg account_name=${{secrets.ACCOUNT_NAME}} --build-arg cluster_api_key=${{secrets.CLUSTER_API_KEY}} --build-arg cluster_api_secret=${{secrets.CLUSTER_API_SECRET}} --build-arg sr_api_key=${{secrets.SR_API_KEY}} --build-arg sr_api_secret=${{secrets.SR_API_SECRET}} --build-arg sr_url=${{secrets.SR_URL}} --build-arg container_name=${{secrets.CONTAINER_NAME}} --build-arg connection_string=${{secrets.CONNECTION_STRING}} .
         docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/reactive-kafka-producer:latest
     - name: Set AKS context
-      id: set-context
-      uses: azure/aks-set-context@v3
+      uses: Azure/aks-set-context@v1
       with:
-        resource-group: '${{ secrets.RESOURCE_GROUP }}'
-        cluster-name: '${{ secrets.CLUSTER_NAME }}'
+        creds: '${{ secrets.AZURE_CREDENTIALS }}'
+        cluster-name: myAKSCluster
+        resource-group: MC_storagesample-sg_myAKSLocationCluster_eastus
     - name: Setup kubectl
       id: install-kubectl
       uses: azure/setup-kubectl@v3
