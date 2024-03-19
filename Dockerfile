@@ -4,7 +4,7 @@ WORKDIR /kafka-producer
 COPY . .
 RUN chmod a+x ./mvnw
 ARG bootstrap_server
-ENV BOOTSTRAP_SERVER $bootstrap_server
+ENV BOOTSTRAP_SERVER ${bootstrap_server}
 ARG sr_url
 ENV SR_URL ${sr_url}
 ARG sr_api_key
