@@ -46,6 +46,6 @@ jobs:
       with:
         namespace: 'default'
         manifests: |
-          reactive-producer-kafka.yaml
+          reactive-producer-kafka.yml
         images: '${{ secrets.REGISTRY_LOGIN_SERVER }}/reactive-kafka-producer:latest'
         pull-images: false

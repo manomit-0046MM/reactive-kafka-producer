@@ -16,7 +16,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: reactive-kafka-producer
-        image: mmgithubacr.azurecr.io/reactive-kafka-producer:latest
+        image: locationacrmm.azurecr.io/reactive-kafka-producer:latest
         ports:
         - containerPort: 8081
 ---
