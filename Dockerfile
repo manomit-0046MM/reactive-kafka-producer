@@ -30,6 +30,8 @@ ARG container_name
 ENV CONTAINER_NAME=$container_name
 ARG connection_string
 ENV CONNECTION_STRING=$connection_string
+ARG sr_api_secret
+ENV SR_API_SECRET=$sr_api_secret
 ARG JAR_FILE=/usr/app/target/REACTIVE_KAFKA_PRODUCER.jar
 COPY --from=build $JAR_FILE /app/runner.jar
 EXPOSE 8081
