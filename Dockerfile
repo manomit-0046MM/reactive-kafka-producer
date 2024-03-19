@@ -6,6 +6,13 @@ ENV HOME=/usr/app
 RUN mkdir -p $HOME
 WORKDIR $HOME
 ADD . $HOME
+RUN chmod +x mvnw
+RUN --mount=type=cache,target=/root/.m2 ./mvnw -f $HOME/pom.xml clean install
+
+#
+# Package stage
+#
+FROM eclipse-temurin:17-jre-jammy
 ARG bootstrap_server
 RUN echo "The ARG variable value is $bootstrap_server"
 ENV BOOTSTRAP_SERVER=$bootstrap_server
@@ -23,13 +30,6 @@ ARG container_name
 ENV CONTAINER_NAME=$container_name
 ARG connection_string
 ENV CONNECTION_STRING=$connection_string
-RUN chmod +x mvnw
-RUN --mount=type=cache,target=/root/.m2 ./mvnw -f $HOME/pom.xml clean install
-
-#
-# Package stage
-#
-FROM eclipse-temurin:17-jre-jammy 
 ARG JAR_FILE=/usr/app/target/REACTIVE_KAFKA_PRODUCER.jar
 COPY --from=build $JAR_FILE /app/runner.jar
 EXPOSE 8081
