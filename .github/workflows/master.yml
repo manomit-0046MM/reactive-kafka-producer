@@ -40,6 +40,13 @@ jobs:
     - name: Setup kubectl
       id: install-kubectl
       uses: azure/setup-kubectl@v3
+    - name: Create Secrets
+      uses: Azure/k8s-create-secret@v1
+      with:
+        container-registry-url: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+        container-registry-username: ${{ secrets.REGISTRY_USERNAME }}
+        container-registry-password: ${{ secrets.REGISTRY_PASSWORD }}
+        secret-name: k8s-secret
     - name: Deploy to AKS
       id: deploy-aks
       uses: Azure/k8s-deploy@v4
@@ -47,5 +54,7 @@ jobs:
         namespace: 'default'
         manifests: |
           reactive-producer-kafka.yml
-        images: '${{ secrets.REGISTRY_LOGIN_SERVER }}/reactive-kafka-producer:latest'
-        pull-images: false
+        images: |
+          ${{ secrets.REGISTRY_LOGIN_SERVER }}/reactive-kafka-producer:${{ github.sha }}
+        imagepullsecrets: |
+          k8s-secret
