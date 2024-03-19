@@ -7,6 +7,7 @@ RUN mkdir -p $HOME
 WORKDIR $HOME
 ADD . $HOME
 ARG bootstrap_server
+RUN echo "The ARG variable value is $bootstrap_server"
 ENV BOOTSTRAP_SERVER=$bootstrap_server
 ARG sr_url
 ENV SR_URL=$sr_url
@@ -17,13 +18,13 @@ ENV CLUSTER_API_KEY=$cluster_api_key
 ARG cluster_api_secret
 ENV CLUSTER_API_SECRET=$cluster_api_secret
 ARG account_name
-ENV ACCOUNT_NAME=$account_name
+ENV ACCOUNT_NAME=reactivekafkamm
 ARG container_name
 ENV CONTAINER_NAME=$container_name
 ARG connection_string
 ENV CONNECTION_STRING=$connection_string
 RUN chmod +x mvnw
-RUN --mount=type=cache,target=/root/.m2 ./mvnw -f $HOME/pom.xml clean package
+RUN --mount=type=cache,target=/root/.m2 ./mvnw -f $HOME/pom.xml clean install
 
 #
 # Package stage
