@@ -14,7 +14,6 @@ RUN --mount=type=cache,target=/root/.m2 ./mvnw -f $HOME/pom.xml clean install
 #
 FROM eclipse-temurin:17-jre-jammy
 ARG bootstrap_server
-RUN echo "The ARG variable value is $bootstrap_server"
 ENV BOOTSTRAP_SERVER=$bootstrap_server
 ARG sr_url
 ENV SR_URL=$sr_url
